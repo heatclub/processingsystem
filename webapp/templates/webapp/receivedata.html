@@ -1,0 +1,46 @@
+{% extends "webapp/header.html" %}
+{% block content %}
+
+
+<div class="container-fluid">
+   <div class="row">
+     <div class="col-2 py-2">
+     </div>
+   </div>
+  <div class="row">
+    <div class="col-1 py-1">
+    </div>
+
+    <div class="col">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+       <li class="nav-item">
+        <a class="nav-link " id="home-tab" data-toggle="tab" href="/insertdata" role="tab" aria-controls="home" aria-selected="true">Insert Data</a>
+        <table class="table table-sm my-4">
+           <tbody>
+           <form method="POST" enctype="multipart/form-data">
+               <tr class="table-active"></tr>
+                <td><label for="team_id1">TeamId:</label></td>
+                <td><input type="text" class="form-control" name="team_id1" id="team_id1" value="{{team_id1}}"></td>
+                </tr>
+               <tr class="table-active"></tr>
+                    <td><label for="cheque_number1" >Cheque Number:</label></td>
+                    <td><input type="text" class="form-control" name="cheque_number1" id="cheque_number1"></td>
+                </tr>
+               <tr class="table-active"></tr>
+                   <td><center><input type="submit" value="submit"/></center></td>
+                </tr>
+           </form>
+
+           </tbody>
+         </table>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link active" id="profile-tab" data-toggle="tab" href="/receivedata" role="tab" aria-controls="profile" aria-selected="false">Receive Data</a>
+       </li>
+       </ul>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

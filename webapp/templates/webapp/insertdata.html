@@ -1,0 +1,108 @@
+{% extends "webapp/header.html" %}
+{% block content %}
+
+
+<div class="container-fluid">
+   <div class="row">
+     <div class="col-2 py-2">
+     </div>
+   </div>
+  <div class="row">
+    <div class="col-1 py-1"></div>
+
+    <div class="col">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+       <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="/insertdata" role="tab" aria-controls="home" aria-selected="true">Insert Data</a>
+            <div class="modal-body row">
+              <div class="col-md-6">
+                <!-- Your first column here -->
+              </div>
+              <div class="col-md-6">
+                <!-- Your second column here -->
+              </div>
+            </div>
+           <table>
+
+           <tbody>
+           <form   method="POST" enctype="multipart/form-data" >
+            <tr class="table-active"></tr>
+                <td><label for="team_id">TeamId:</label></td>
+                <td><input type="text" class="form-control" name="team_id" id="team_id" value="{{team_id}}"></td>
+            </tr>
+            <tr class="table-active"></tr>
+                <td><label for="cheque_number" >Cheque Number:</label></td>
+                <td><input type="text" class="form-control" name="cheque_number" id="cheque_number" ></td>
+            </tr>
+           <tr class="table-active"></tr>
+                <td><label for="amount_words" >Amount In Words:</label></td>
+                <td><input type="text" class="form-control" name="amount_words" id="amount_words" ></td>
+            </tr>
+           <tr class="table-active"></tr>
+                <td><label for="amount_digits" >Amount In Digits:</label></td>
+                <td><input type="text" class="form-control" name="amount_digits" id="amount_digits" ></td>
+            </tr>
+           <tr class="table-active"></tr>
+                <td><label for="date" >Cheque Date:</label></td>
+                <td><input type="text" class="form-control" name="date" id="date" ></td>
+            </tr>
+           <tr class="table-active"></tr>
+                <td><label for="MICR_code" >MICR Code:</label></td>
+                <td><input type="text" class="form-control" name="MICR_code" id="MICR_code" ></td>
+            </tr>
+           <tr class="table-active"></tr>
+                <td><label for="act_type" >ACT Type:</label></td>
+                <td><input type="text" class="form-control" name="act_type" id="act_type" ></td>
+            </tr>
+           <tr class="table-active"></tr>
+                <td><label for="san_no" >SAN Number:</label></td>
+                <td><input type="text" class="form-control" name="san_no" id="san_no" ></td>
+            </tr>
+           <tr class="table-active"></tr>
+                <td><label for="ben_name" >Benifiary Name:</label></td>
+                <td><input type="text" class="form-control" name="ben_name" id="ben_name" ></td>
+            </tr>
+           <tr class="table-active"></tr>
+                <td><label for="acc_no" >Account Number:</label></td>
+                <td><input type="text" class="form-control" name="acc_no" id="acc_no" ></td>
+            </tr>
+           <tr class="table-active"></tr>
+                <td><label for="amt_match" >Amount Match:</label></td>
+                <td><input type="text" class="form-control" name="amt_match" id="amt_match" ></td>
+            </tr>
+           <tr class="table-active"></tr>
+                <td><label for="cheque_stale" >Cheque Stale:</label></td>
+                <td><input type="text" class="form-control" name="cheque_stale" id="cheque_stale" ></td>
+            </tr>
+           <tr class="table-active"></tr>
+                <td><label for="encoding" >Encoding:</label></td>
+                <td><input type="text" class="form-control" name="encoding" id="encoding" ></td>
+            </tr>
+               <tr class="table-active"></tr>
+                <td><label for="size" >Image Size:</label></td>
+                <td><input type="text" class="form-control" name="size" id="size" ></td>
+            </tr>
+           <tr class="table-active"></tr>
+
+                <td><input type="file" name="myfile" id="image"></td>
+               <td><center><input type="submit" value="submit"/></center></td>
+            </tr>
+               {% if uploaded_file_url %}
+                <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+              {% endif %}
+           </form>
+
+           </tbody>
+         </table>
+
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="/receivedata" role="tab" aria-controls="profile" aria-selected="false">Receive Data</a>
+       </li>
+       </ul>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

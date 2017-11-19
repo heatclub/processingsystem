@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>cms</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'webapp/css/bootstrap.min.css' %}" type = "text/css"/>
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+
+	<style type="text/css">
+		html,
+		body {
+		  height:100%
+		}
+	</style>
+</head>
+
+<body class="body" style="background-color:#F9F7F6">
+
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand">
+    		<img src="{% static '/webapp/img/cms.png' %}" width="85" height="30" alt="cms">
+  		</a>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<div class="row">
+						<div class="col">
+							<li class="nav-item active">
+								<a class="nav-link" href="/home">Home<span class="sr-only">(current)</span></a>
+							</li>
+						</div>
+						<div class="col">
+							<li class="nav-item active">
+								<a class="nav-link" href="/status">Status<span class="sr-only">(current)</span></a>
+							</li>
+						</div>
+						<div class="col">
+							<li class="nav-item active">
+								<a class="nav-link" href="analytics">Analytics<span class="sr-only">(current)</span></a>
+							</li>
+						</div>
+						<div class="col">
+							<li class="nav-item active">
+								<a class="nav-link" href="/admin">Admin<span class="sr-only">(current)</span></a>
+							</li>
+						</div>
+					</div>
+				 </ul>
+			</div>
+		</nav>
+	 </div>
+	 <!--include other pages here in template-->
+	 {% block content %}
+	 {% endblock %}
+
+</body>
+
+</html>
